@@ -1,0 +1,219 @@
+
+{
+    "@context": {
+      "@vocab": "https://schema.org/",
+      "croissant": "https://mlcommons.org/croissant/1.0",
+      "dataType": "croissant:dataType",
+      "recordSet": "croissant:recordSet",
+      "field": "croissant:field"
+    },
+    "@type": "Dataset",
+    "name": "FAIR_Universe_High_Energy_Physics_Dataset",
+    "description": "A dataset containing particle collision features for classification tasks (e.g., ztautau, diboson, ttbar, htautau).",
+    "license": {
+        "@type": "CreativeWork",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "FAIR Universe"
+    },
+    "version": "1.0",
+    "datePublished": "2025-05-14",
+    "citation": "Bhimji, W., Calafiura, P., Chakkappai, R., Chang, P.-W., Chou, Y.-T., Diefenbacher, S., Dudley, J., Elham E Khoda, Ghosh, A., Farrell, S., Guyon, I., Harris, C., Hsu, S.-C., Nachman, B., Rousseau, D., Thorne, B., Ullah, I., & Zhang, Y. (2025). FAIR Universe - HiggsML Uncertainty Challenge Public Dataset [Data set]. Neural Information Processing Systems (NeurIPS), Vancouver, Canada. Zenodo. https://doi.org/10.5281/zenodo.15131565",
+    "DOI": "https://doi.org/10.5281/zenodo.15131565",
+    "keywords": [
+      "high-energy physics",
+      "uncertainty Quantification",
+      "classification",
+      "machine learning"
+    ],
+    "distribution": {
+      "@type": "FileObject",
+      "name": "FAIR_Universe_HiggsML_data",
+      "description": "Primary parquet dataset and metadata in zip format.",
+      "contentUrl": "https://zenodo.org/api/records/15131565/files/FAIR_Universe_HiggsML_data.zip",
+      "encodingFormat": "application/zip",
+      "sha256" : "a9bbb8c44c14c7ffe7be2fd3bf179f0b9bf732401346b8cd65c26bf39ba0fe4f",
+      "md5" : "7fb2a4f2b73bb8dcdaa6ffc0fe67e96e"
+    },
+    "croissant": {
+      "recordSet": [
+        {
+          "name": "particle_collisions",
+          "description": "Records of particle collision events with derived kinematic features.",
+          "field": [
+            {
+                "name": "PRI_had_pt",
+                "description": "Transverse momentum px2+py2 of the hadronic tau.",
+                "dataType": "float"
+            },
+            {
+                "name": "PRI_had_eta",
+                "description": "The pseudorapidity η of the hadronic tau.",
+                "dataType": "float"
+            },
+            {
+                "name": "PRI_had_phi",
+                "description": "Azimuthal angle (ϕ) of the hadronic tau",
+                "dataType": "float"
+            },  
+            {
+                "name": "PRI_lep_pt",
+                "description": "Transverse momentum px2+py2 of the lepton (electron or muon)",
+                "dataType": "float"
+            },                      
+            {
+              "name": "PRI_lep_eta",
+              "description": "Pseudorapidity of the lepton (electron or muon)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_lep_phi",
+              "description": "Azimuthal angle (ϕ) of the lepton (electron or muon)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_met",
+              "description": "Missing transverse energy (MET) of the event",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_met_phi",
+              "description": "Azimuthal angle (ϕ) of the missing transverse energy (MET)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_n_jets",
+              "description": "Number of jets in the event",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_leading_pt",
+              "description": "Transverse momentum px2+py2 of the leading jet, that is the jet with the largest transverse momentum (undefined if PRI_jet_num = 0)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_leading_eta",
+              "description": "Pseudorapidity η of the leading jet (undefined if PRI_jet_num = 0)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_leading_phi",
+              "description": "Azimuth angle ϕ of the leading jet (undefined if PRI_jet_num = 0)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_subleading_pt",
+              "description": "Transverse momentum px2+py2 of the subleading jet, that is the jet with the second largest transverse momentum (undefined if PRI_jet_num < 2)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_subleading_eta",
+              "description": "Pseudorapidity η of the subleading jet (undefined if PRI_jet_num < 2)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_subleading_phi",
+              "description": "Azimuth angle ϕ of the subleading jet (undefined if PRI_jet_num < 2)",
+              "dataType": "float"
+            },
+            {
+              "name": "PRI_jet_all_pt",
+              "description": "Scalar sum of transverse momentum of all the jets of the events",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_mass_transverse_met_lep",
+              "description": "Transverse mass between the missing transverse energy and the lepton.",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_mass_vis",
+              "description": "The invariant mass of the hadronic tau and the lepton.",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_pt_h",
+              "description": "The modulus of the vector sum of transverse momentum of the hadronic tau, the lepton and the missing transverse energy vector.",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_deltaeta_jet_jet",
+              "description": "The absolute value of the pseudorapidity separation between the two jets (undefined if PRI_jet_num ≤ 1).",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_mass_jet_jet",
+              "description": "The invariant mass of the two jets (undefined if PRI_jet_num ≤ 1).",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_prodeta_jet_jet",
+              "description": "The product of the pseudorapidities of the two jets (undefined if PRI_jet_num ≤ 1).",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_deltar_had_lep",
+              "description": "The R separation between the hadronic tau and the lepton.",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_pt_tot",
+              "description": "The modulus of the vector sum of the missing transverse momenta and transverse momenta of the hadronic tau, the lepton, the leading jet (if PRI_jet_num ≥ 1) and the subleading jet (if PRI_jet_num = 2) (but not of any additional jets).",
+              "dataType": "float"
+            },
+            {
+                "name": "DER_sum_pt",
+                "description": "The sum of the moduli of the transverse momenta of the hadronic tau, the lepton, the leading jet (if PRI_jet_num ≥ 1) and the subleading jet (if PRI_jet_num = 2) and the other jets (if PRI_jet_num = 3).",
+                "dataType": "float"
+            },
+            {
+              "name": "DER_pt_ratio_lep_had",
+              "description": "The ratio of the transverse momentum of the lepton to that of the hadronic tau.",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_met_phi_centrality",
+              "description": "The centrality of the azimuthal angle of the missing transverse energy vector w.r.t. the hadronic tau and the lepton",
+              "dataType": "float"
+            },
+            {
+              "name": "DER_lep_eta_centrality",
+              "description": "The centrality of the pseudorapidity of the lepton w.r.t. the two jets (undefined if PRI_jet_num ≤ 1)",
+              "dataType": "float"
+            },
+            {
+              "name": "labels",
+              "description": "Simplified class labels (1 for signal, 0 for background)",
+              "dataType": "integer"
+            },
+            {
+              "name": "detailed_labels",
+              "description": "Detailed class labels",
+              "dataType": "text",
+              "source": {
+                "extract": {
+                  "column": "detailed_labels"
+                }
+              }
+            },
+            {
+              "name": "weights",
+              "description": "Event weights for statistical analysis",
+              "dataType": "float"
+            }
+          ]
+        }
+      ],
+      "dataProperties": {
+        "totalRows": 220099101,
+        "totalColumns": 31,
+        "luminosity": 10,
+        "sumWeights": 1051433.0
+      },
+      "mlTask": "classification",
+      "targetVariable": "labels"
+    }
+  }
