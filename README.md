@@ -7,7 +7,7 @@ This repo consists of material for the HiggsML Uncertainty Challenge. The NeuIPS
 ***
 
 ## Dataset Access
-The dataste is available on  [Zenodo](https://zenodo.org/api/records/15131565/access). Detailed description of the dataset are available on the website
+The dataste is available on  [Zenodo](https://zenodo.org/records/15131565). Detailed description of the dataset are available on the website
 
 ## Docs
 We have added detailed documentation on our website that details every aspect of the competition. 
