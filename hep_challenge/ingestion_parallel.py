@@ -375,7 +375,7 @@ class Ingestion:
             Model (object): The model class.
         """
         logger.info("Initializing Submmited Model")
-        from systematics import (
+        from hep_challenge.systematics import (
             systematics,
         )
 
