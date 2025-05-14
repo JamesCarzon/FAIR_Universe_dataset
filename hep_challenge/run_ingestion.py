@@ -1,7 +1,7 @@
 import sys
 
 sys.path.append("..")
-from datasets import Data
+from hep_challenge.datasets import Data
 import argparse
 import pathlib
 import os
@@ -104,9 +104,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.parallel:
-        from ingestion_parallel import Ingestion
+        from hep_challenge.ingestion_parallel import Ingestion
     else:
-        from ingestion import Ingestion
+        from hep_challenge.ingestion import Ingestion
 
     if not args.codabench:
         input_dir = args.input

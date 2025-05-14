@@ -13,7 +13,7 @@ __author__ = "David Rousseau, and Victor Estrade "
 import copy
 import pandas as pd
 import numpy as np
-from derived_quantities import DER_data
+from hep_challenge.derived_quantities import DER_data
 
 
 # ==================================================================================

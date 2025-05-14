@@ -68,7 +68,7 @@ else:
     with open(settings_file) as f:
         test_settings = json.load(f)
 
-from score import Scoring
+from hep_challenge.score import Scoring
 
 # Init scoring
 scoring = Scoring()

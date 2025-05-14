@@ -69,7 +69,7 @@ _model = None
 
 def _generate_pseudo_exp_data(data, set_mu=1, tes=1.0, jes=1.0, soft_met=0.0, ttbar_scale=None, diboson_scale=None, bkg_scale=None, seed=0):
 
-        from systematics import get_bootstrapped_dataset, get_systematics_dataset
+        from hep_challenge.systematics import get_bootstrapped_dataset, get_systematics_dataset
 
         # get bootstrapped dataset from the original test set
         pesudo_exp_data = get_bootstrapped_dataset(
