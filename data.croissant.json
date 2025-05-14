@@ -35,7 +35,7 @@
       "description": "Primary parquet dataset and metadata in zip format.",
       "contentUrl": "https://zenodo.org/api/records/15131565/files/FAIR_Universe_HiggsML_data.zip",
       "encodingFormat": "application/zip",
-      "sha256" : "a9bbb8c44c14c7ffe7be2fd3bf179f0b9bf732401346b8cd65c26bf39ba0fe4f",
+      "sha256" : "adaa3dd81a02663051aa93f960bc1c5ee67a78d25c091015bb020b1f9cd7dcb5",
       "md5" : "7fb2a4f2b73bb8dcdaa6ffc0fe67e96e"
     },
     "croissant": {
