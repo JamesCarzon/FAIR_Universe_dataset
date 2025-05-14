@@ -1,6 +1,6 @@
 # FAIR Universe - HiggsML Dataset
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15131565.svg)](https://doi.org/10.5281/zenodo.15131565)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15131565.svg)](https://doi.org/10.5281/zenodo.15131565) [![Starting Kit In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/FAIR-Universe/FAIR_Universe_dataset/blob/main/StartingKit_HiggsML_Dataset.ipynb)
 
 This repo consists of material for the HiggsML Uncertainty Challenge. The NeuIPS competition ran from september 2024 to March 2025. The Challenge will soon be relased as a long term benchmarkk.
 
