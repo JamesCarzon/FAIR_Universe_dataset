@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAIR Universe HEP Challenge &mdash; FAIR Universe Dataset  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+    <link rel="shortcut icon" href="_static/logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to FAIR Universe Dataset’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FAIR Universe Dataset
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAIR Universe HEP Challenge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hep-challenge-datasets-module">hep_challenge.datasets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.datasets.Data"><code class="docutils literal notranslate"><span class="pre">Data</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.datasets.Data.delete_train_set"><code class="docutils literal notranslate"><span class="pre">Data.delete_train_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.datasets.Data.get_test_set"><code class="docutils literal notranslate"><span class="pre">Data.get_test_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.datasets.Data.get_train_set"><code class="docutils literal notranslate"><span class="pre">Data.get_train_set()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.datasets.download_public_dataset"><code class="docutils literal notranslate"><span class="pre">download_public_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hep-challenge-ingestion-module">hep_challenge.ingestion module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion"><code class="docutils literal notranslate"><span class="pre">Ingestion</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.compute_result"><code class="docutils literal notranslate"><span class="pre">Ingestion.compute_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.fit_submission"><code class="docutils literal notranslate"><span class="pre">Ingestion.fit_submission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.get_duration"><code class="docutils literal notranslate"><span class="pre">Ingestion.get_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.init_submission"><code class="docutils literal notranslate"><span class="pre">Ingestion.init_submission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.load_train_set"><code class="docutils literal notranslate"><span class="pre">Ingestion.load_train_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.predict_submission"><code class="docutils literal notranslate"><span class="pre">Ingestion.predict_submission()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.save_duration"><code class="docutils literal notranslate"><span class="pre">Ingestion.save_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.save_result"><code class="docutils literal notranslate"><span class="pre">Ingestion.save_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.start_timer"><code class="docutils literal notranslate"><span class="pre">Ingestion.start_timer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.ingestion.Ingestion.stop_timer"><code class="docutils literal notranslate"><span class="pre">Ingestion.stop_timer()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hep-challenge-score-module">hep_challenge.score module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.score.Scoring"><code class="docutils literal notranslate"><span class="pre">Scoring</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.MAE_score"><code class="docutils literal notranslate"><span class="pre">Scoring.MAE_score()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.Quantiles_Score"><code class="docutils literal notranslate"><span class="pre">Scoring.Quantiles_Score()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.RMSE_score"><code class="docutils literal notranslate"><span class="pre">Scoring.RMSE_score()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.compute_scores"><code class="docutils literal notranslate"><span class="pre">Scoring.compute_scores()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.load_ingestion_duration"><code class="docutils literal notranslate"><span class="pre">Scoring.load_ingestion_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.load_ingestion_results"><code class="docutils literal notranslate"><span class="pre">Scoring.load_ingestion_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.score.Scoring.save_figure"><code class="docutils literal notranslate"><span class="pre">Scoring.save_figure()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hep-challenge-visualization-module">hep_challenge.visualization module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise.correlation_plots"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise.correlation_plots()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise.examine_dataset"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise.examine_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise.histogram_dataset"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise.histogram_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise.pair_plots"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise.pair_plots()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise.pair_plots_syst"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise.pair_plots_syst()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hep_challenge.visualization.Dataset_visualise.stacked_histogram"><code class="docutils literal notranslate"><span class="pre">Dataset_visualise.stacked_histogram()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.visualization.roc_curve_wrapper"><code class="docutils literal notranslate"><span class="pre">roc_curve_wrapper()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.visualization.visualize_coverage"><code class="docutils literal notranslate"><span class="pre">visualize_coverage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hep_challenge.visualization.visualize_scatter"><code class="docutils literal notranslate"><span class="pre">visualize_scatter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FAIR Universe Dataset</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">FAIR Universe HEP Challenge</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/hep_challenge.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fair-universe-hep-challenge">
+<h1>FAIR Universe HEP Challenge<a class="headerlink" href="#fair-universe-hep-challenge" title="Link to this heading"></a></h1>
+<section id="hep-challenge-datasets-module">
+<h2>hep_challenge.datasets module<a class="headerlink" href="#hep-challenge-datasets-module" title="Link to this heading"></a></h2>
+<dl class="py class" id="module-hep_challenge.datasets">
+<dt class="sig sig-object py" id="hep_challenge.datasets.Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hep_challenge.datasets.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.datasets.Data" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to represent a dataset.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>input_dir (str): The directory path of the input data.</p></li>
+</ul>
+</dd>
+<dt>Attributes:</dt><dd><ul class="simple">
+<li><p>__train_set (dict): A dictionary containing the train dataset.</p></li>
+<li><p>__test_set (dict): A dictionary containing the test dataset.</p></li>
+<li><p>input_dir (str): The directory path of the input data.</p></li>
+</ul>
+</dd>
+<dt>Methods:</dt><dd><ul class="simple">
+<li><p>load_train_set(): Loads the train dataset.</p></li>
+<li><p>load_test_set(): Loads the test dataset.</p></li>
+<li><p>get_train_set(): Returns the train dataset.</p></li>
+<li><p>get_test_set(): Returns the test dataset.</p></li>
+<li><p>delete_train_set(): Deletes the train dataset.</p></li>
+<li><p>get_syst_train_set(): Returns the train dataset with systematic variations.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.datasets.Data.delete_train_set">
+<span class="sig-name descname"><span class="pre">delete_train_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.datasets.Data.delete_train_set" title="Link to this definition"></a></dt>
+<dd><p>Deletes the train dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.datasets.Data.get_test_set">
+<span class="sig-name descname"><span class="pre">get_test_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.datasets.Data.get_test_set" title="Link to this definition"></a></dt>
+<dd><p>Returns the test dataset.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict: The test dataset.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.datasets.Data.get_train_set">
+<span class="sig-name descname"><span class="pre">get_train_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.datasets.Data.get_train_set" title="Link to this definition"></a></dt>
+<dd><p>Returns the train dataset.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>dict: The train dataset.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hep_challenge.datasets.download_public_dataset">
+<span class="sig-prename descclassname"><span class="pre">hep_challenge.datasets.</span></span><span class="sig-name descname"><span class="pre">download_public_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.datasets.download_public_dataset" title="Link to this definition"></a></dt>
+<dd><p>Downloads and extracts the Neurips 2024 public dataset.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Data: The path to the extracted input data.</p>
+</dd>
+<dt>Raises:</dt><dd><p>HTTPError: If there is an error while downloading the dataset.
+FileNotFoundError: If the downloaded dataset file is not found.
+zipfile.BadZipFile: If the downloaded file is not a valid zip file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="hep-challenge-ingestion-module">
+<h2>hep_challenge.ingestion module<a class="headerlink" href="#hep-challenge-ingestion-module" title="Link to this heading"></a></h2>
+<dl class="py class" id="module-hep_challenge.ingestion">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hep_challenge.ingestion.</span></span><span class="sig-name descname"><span class="pre">Ingestion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for handling the ingestion process.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data (object): The data object.</p>
+</dd>
+<dt>Attributes:</dt><dd><ul class="simple">
+<li><p>start_time (datetime): The start time of the ingestion process.</p></li>
+<li><p>end_time (datetime): The end time of the ingestion process.</p></li>
+<li><p>model (object): The model object.</p></li>
+<li><p>data (object): The data object.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.compute_result">
+<span class="sig-name descname"><span class="pre">compute_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.compute_result" title="Link to this definition"></a></dt>
+<dd><p>Compute the ingestion result.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.fit_submission">
+<span class="sig-name descname"><span class="pre">fit_submission</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.fit_submission" title="Link to this definition"></a></dt>
+<dd><p>Fit the submitted model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.get_duration">
+<span class="sig-name descname"><span class="pre">get_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.get_duration" title="Link to this definition"></a></dt>
+<dd><p>Get the duration of the ingestion process.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>timedelta: The duration of the ingestion process.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.init_submission">
+<span class="sig-name descname"><span class="pre">init_submission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.init_submission" title="Link to this definition"></a></dt>
+<dd><p>Initialize the submitted model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Model (object): The model class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.load_train_set">
+<span class="sig-name descname"><span class="pre">load_train_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.load_train_set" title="Link to this definition"></a></dt>
+<dd><p>Load the training set.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>object: The loaded training set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.predict_submission">
+<span class="sig-name descname"><span class="pre">predict_submission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">31415</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.predict_submission" title="Link to this definition"></a></dt>
+<dd><p>Make predictions using the submitted model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>test_settings (dict): The test settings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.save_duration">
+<span class="sig-name descname"><span class="pre">save_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.save_duration" title="Link to this definition"></a></dt>
+<dd><p>Save the duration of the ingestion process to a file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>output_dir (str): The output directory to save the duration file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.save_result">
+<span class="sig-name descname"><span class="pre">save_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.save_result" title="Link to this definition"></a></dt>
+<dd><p>Save the ingestion result to files.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>output_dir (str): The output directory to save the result files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.start_timer">
+<span class="sig-name descname"><span class="pre">start_timer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.start_timer" title="Link to this definition"></a></dt>
+<dd><p>Start the timer for the ingestion process.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.ingestion.Ingestion.stop_timer">
+<span class="sig-name descname"><span class="pre">stop_timer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.ingestion.Ingestion.stop_timer" title="Link to this definition"></a></dt>
+<dd><p>Stop the timer for the ingestion process.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="hep-challenge-score-module">
+<h2>hep_challenge.score module<a class="headerlink" href="#hep-challenge-score-module" title="Link to this heading"></a></h2>
+<dl class="py class" id="module-hep_challenge.score">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hep_challenge.score.</span></span><span class="sig-name descname"><span class="pre">Scoring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class is used to compute the scores for the competition.
+For more details, see the <span class="xref std std-doc">evaluation page</span>.</p>
+<dl class="simple">
+<dt>Atributes:</dt><dd><ul class="simple">
+<li><p>start_time (datetime): The start time of the scoring process.</p></li>
+<li><p>end_time (datetime): The end time of the scoring process.</p></li>
+<li><p>ingestion_results (list): The ingestion results.</p></li>
+<li><p>ingestion_duration (float): The ingestion duration.</p></li>
+<li><p>scores_dict (dict): The scores dictionary.</p></li>
+</ul>
+</dd>
+<dt>Methods:</dt><dd><ul class="simple">
+<li><p>start_timer(): Start the timer.</p></li>
+<li><p>stop_timer(): Stop the timer.</p></li>
+<li><p>get_duration(): Get the duration of the scoring process.</p></li>
+<li><p>show_duration(): Show the duration of the scoring process.</p></li>
+<li><p>load_ingestion_duration(ingestion_duration_file): Load the ingestion duration.</p></li>
+<li><p>load_ingestion_results(prediction_dir=”./”,score_dir=”./”): Load the ingestion results.</p></li>
+<li><p>compute_scores(test_settings): Compute the scores.</p></li>
+<li><p>RMSE_score(mu, mu_hat, delta_mu_hat): Compute the RMSE score.</p></li>
+<li><p>MAE_score(mu, mu_hat, delta_mu_hat): Compute the MAE score.</p></li>
+<li><p>Quantiles_Score(mu, p16, p84, eps=1e-3): Compute the Quantiles Score.</p></li>
+<li><p>write_scores(): Write the scores.</p></li>
+<li><p>write_html(content): Write the HTML content.</p></li>
+<li><p>_print(content): Print the content.</p></li>
+<li><p>save_figure(mu, p16s, p84s, set=0): Save the figure.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.MAE_score">
+<span class="sig-name descname"><span class="pre">MAE_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu_hat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_mu_hat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.MAE_score" title="Link to this definition"></a></dt>
+<dd><p>Compute the mean absolute error between the true value mu and the predicted value mu_hat.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>mu (float): The true value.</p></li>
+<li><p>mu_hat (np.array): The predicted value.</p></li>
+<li><p>delta_mu_hat (np.array): The uncertainty on the predicted value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.Quantiles_Score">
+<span class="sig-name descname"><span class="pre">Quantiles_Score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p84</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.Quantiles_Score" title="Link to this definition"></a></dt>
+<dd><p>Compute the quantiles score based on the true value mu and the quantiles p16 and p84.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>mu (array): The true ${mu} value.</p></li>
+<li><p>p16 (array): The 16th percentile.</p></li>
+<li><p>p84 (array): The 84th percentile.</p></li>
+<li><p>eps (float, optional): A small value to avoid division by zero. Defaults to 1e-3.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.RMSE_score">
+<span class="sig-name descname"><span class="pre">RMSE_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu_hat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_mu_hat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.RMSE_score" title="Link to this definition"></a></dt>
+<dd><p>Compute the root mean squared error between the true value mu and the predicted value mu_hat.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>mu (float): The true value.</p></li>
+<li><p>mu_hat (np.array): The predicted value.</p></li>
+<li><p>delta_mu_hat (np.array): The uncertainty on the predicted value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.compute_scores">
+<span class="sig-name descname"><span class="pre">compute_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_html</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.compute_scores" title="Link to this definition"></a></dt>
+<dd><p>Compute the scores for the competition based on the test settings.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>test_settings (dict): The test settings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.load_ingestion_duration">
+<span class="sig-name descname"><span class="pre">load_ingestion_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ingestion_duration_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.load_ingestion_duration" title="Link to this definition"></a></dt>
+<dd><p>Load the ingestion duration.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>ingestion_duration_file (str): The ingestion duration file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.load_ingestion_results">
+<span class="sig-name descname"><span class="pre">load_ingestion_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prediction_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.load_ingestion_results" title="Link to this definition"></a></dt>
+<dd><p>Load the ingestion results.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>prediction_dir (str, optional): location of the predictions. Defaults to “./”.
+score_dir (str, optional): location of the scores. Defaults to “./”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.score.Scoring.save_figure">
+<span class="sig-name descname"><span class="pre">save_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p16s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p84s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">true_mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.score.Scoring.save_figure" title="Link to this definition"></a></dt>
+<dd><p>Save the figure of the mu distribution.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>mu (array): The true ${mu} value.</p></li>
+<li><p>p16 (array): The 16th percentile.</p></li>
+<li><p>p84 (array): The 84th percentile.</p></li>
+<li><p>set (int, optional): The set number. Defaults to 0.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="hep-challenge-visualization-module">
+<h2>hep_challenge.visualization module<a class="headerlink" href="#hep-challenge-visualization-module" title="Link to this heading"></a></h2>
+<dl class="py class" id="module-hep_challenge.visualization">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hep_challenge.visualization.</span></span><span class="sig-name descname"><span class="pre">Dataset_visualise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataset'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for visualizing datasets.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>data_set (dict): The dataset containing the data, labels, weights, and detailed labels.</p></li>
+<li><p>name (str): The name of the dataset (default: “dataset”).</p></li>
+<li><p>columns (list): The list of column names to consider (default: None, which includes all columns).</p></li>
+</ul>
+</dd>
+<dt>Attributes:</dt><dd><ul class="simple">
+<li><p>dfall (DataFrame): The dataset.</p></li>
+<li><p>target (Series): The labels.</p></li>
+<li><p>weights (Series): The weights.</p></li>
+<li><p>detailed_label (ndarray): The detailed labels.</p></li>
+<li><p>columns (list): The list of column names.</p></li>
+<li><p>name (str): The name of the dataset.</p></li>
+<li><p>keys (ndarray): The unique detailed labels.</p></li>
+<li><p>weight_keys (dict): The weights for each detailed label.</p></li>
+</ul>
+</dd>
+<dt>Methods:</dt><dd><ul class="simple">
+<li><p>examine_dataset(): Prints information about the dataset.</p></li>
+<li><p>histogram_dataset(columns=None): Plots histograms of the dataset features.</p></li>
+<li><p>correlation_plots(columns=None): Plots correlation matrices of the dataset features.</p></li>
+<li><p>pair_plots(sample_size=10, columns=None): Plots pair plots of the dataset features.</p></li>
+<li><p>stacked_histogram(field_name, mu_hat=1.0, bins=30): Plots a stacked histogram of a specific field in the dataset.</p></li>
+<li><p>pair_plots_syst(df_syst, sample_size=10): Plots pair plots between the dataset and a system dataset.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise.correlation_plots">
+<span class="sig-name descname"><span class="pre">correlation_plots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise.correlation_plots" title="Link to this definition"></a></dt>
+<dd><p>Plots correlation matrices of the dataset features.</p>
+<p>Args:
+* columns (list): The list of column names to consider (default: None, which includes all columns).</p>
+<img alt="_images/correlation_plots.png" src="_images/correlation_plots.png" />
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise.examine_dataset">
+<span class="sig-name descname"><span class="pre">examine_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise.examine_dataset" title="Link to this definition"></a></dt>
+<dd><p>Prints information about the dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise.histogram_dataset">
+<span class="sig-name descname"><span class="pre">histogram_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise.histogram_dataset" title="Link to this definition"></a></dt>
+<dd><p>Plots histograms of the dataset features.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>columns (list): The list of column names to consider (default: None, which includes all columns).</p></li>
+<li><p>nbin (int): The number of bins for the histogram (default: 25).</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="_images/histogram_datasets.png" src="_images/histogram_datasets.png" />
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise.pair_plots">
+<span class="sig-name descname"><span class="pre">pair_plots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise.pair_plots" title="Link to this definition"></a></dt>
+<dd><p>Plots pair plots of the dataset features.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>sample_size (int): The number of samples to consider (default: 10).</p></li>
+<li><p>columns (list): The list of column names to consider (default: None, which includes all columns).</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="_images/pair_plot.png" src="_images/pair_plot.png" />
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise.pair_plots_syst">
+<span class="sig-name descname"><span class="pre">pair_plots_syst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_syst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise.pair_plots_syst" title="Link to this definition"></a></dt>
+<dd><p>Plots pair plots between the dataset and a system dataset.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>df_syst (DataFrame): The system dataset.</p></li>
+<li><p>sample_size (int): The number of samples to consider (default: 10).</p></li>
+</ul>
+</dd>
+</dl>
+<p>..images:: images/pair_plot_syst.png</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hep_challenge.visualization.Dataset_visualise.stacked_histogram">
+<span class="sig-name descname"><span class="pre">stacked_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu_hat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.Dataset_visualise.stacked_histogram" title="Link to this definition"></a></dt>
+<dd><p>Plots a stacked histogram of a specific field in the dataset.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>field_name (str): The name of the field to plot.</p></li>
+<li><p>mu_hat (float): The value of mu (default: 1.0).</p></li>
+<li><p>bins (int): The number of bins for the histogram (default: 30).</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="_images/stacked_histogram.png" src="_images/stacked_histogram.png" />
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hep_challenge.visualization.roc_curve_wrapper">
+<span class="sig-prename descclassname"><span class="pre">hep_challenge.visualization.</span></span><span class="sig-name descname"><span class="pre">roc_curve_wrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.roc_curve_wrapper" title="Link to this definition"></a></dt>
+<dd><p>Plots the ROC curve.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>score (ndarray): The score.</p></li>
+<li><p>labels (ndarray): The labels.</p></li>
+<li><p>weights (ndarray): The weights.</p></li>
+<li><p>plot_label (str, optional): The plot label. Defaults to “model”.</p></li>
+<li><p>color (str, optional): The color. Defaults to “b”.</p></li>
+<li><p>lw (int, optional): The line width. Defaults to 2.</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="_images/roc_curve.png" src="_images/roc_curve.png" />
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hep_challenge.visualization.visualize_coverage">
+<span class="sig-prename descclassname"><span class="pre">hep_challenge.visualization.</span></span><span class="sig-name descname"><span class="pre">visualize_coverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ingestion_result_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_mus</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.visualize_coverage" title="Link to this definition"></a></dt>
+<dd><p>Plots a coverage plot of the mu values.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>ingestion_result_dict (dict): A dictionary containing the ingestion results.</p></li>
+<li><p>ground_truth_mus (dict): A dictionary of ground truth mu values.</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="images/coverage_plot.png" src="images/coverage_plot.png" />
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hep_challenge.visualization.visualize_scatter">
+<span class="sig-prename descclassname"><span class="pre">hep_challenge.visualization.</span></span><span class="sig-name descname"><span class="pre">visualize_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ingestion_result_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_mus</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hep_challenge.visualization.visualize_scatter" title="Link to this definition"></a></dt>
+<dd><p>Plots a scatter Plot of ground truth vs. predicted mu values.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>ingestion_result_dict (dict): A dictionary containing the ingestion results.</p></li>
+<li><p>ground_truth_mus (dict): A dictionary of ground truth mu values.</p></li>
+</ul>
+</dd>
+</dl>
+<img alt="images/scatter_plot_mu.png" src="images/scatter_plot_mu.png" />
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to FAIR Universe Dataset’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, FAIR Universe Collaboration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
