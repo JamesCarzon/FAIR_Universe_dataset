@@ -1,4 +1,4 @@
-HiggsML package
+FAIR Universe HEP Challenge
 ===============
 
 hep_challenge.datasets module
