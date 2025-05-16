@@ -1,6 +1,6 @@
 # FAIR Universe - HiggsML Dataset
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15131565.svg)](https://doi.org/10.5281/zenodo.15131565) [![Starting Kit In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/FAIR-Universe/FAIR_Universe_dataset/blob/main/StartingKit_HiggsML_Dataset.ipynb)[![Documentation Status](https://readthedocs.org/projects/black-swan-pkg/badge/?version=latest)](https://fair-universe-dataset-public.readthedocs.io/en/latest/?badge=latest)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15131565.svg)](https://doi.org/10.5281/zenodo.15131565) [![Starting Kit In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/FAIR-Universe/FAIR_Universe_dataset/blob/main/StartingKit_HiggsML_Dataset.ipynb) [![Documentation Status](https://readthedocs.org/projects/black-swan-pkg/badge/?version=latest)](https://fair-universe-dataset-public.readthedocs.io/en/latest/?badge=latest)
 
 
 This repo contains the utility software for the FAIR Universe HiggsML Uncertainty Challenge Dataset. This data was used for the FAIR Universe HiggsML Uncertainty Challenge 2024 a NeuIPS competition, which ran from september 2024 to March 2025. The challenge will soon be released as a long term benchmark.
