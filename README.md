@@ -12,7 +12,7 @@ The dataste is available on  [Zenodo](https://zenodo.org/records/15131565). Deta
 
 ## Docs
 We have added detailed documentation on our website that details every aspect of the competition. 
-[Docs link](https://fair-universe.lbl.gov/docs/) 
+[Docs link](https://fair-universe-dataset-public.readthedocs.io/en/latest/) 
 
 ## Starting Kit
 To get you started with the challenge, we will prepare a starting kit. This will help you understand the challenge, its protocol and how to prepare a submission.
