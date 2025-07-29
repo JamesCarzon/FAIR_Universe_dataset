@@ -1,0 +1,16 @@
+README.md
+setup.py
+./hep_challenge/__init__.py
+./hep_challenge/datasets.py
+./hep_challenge/derived_quantities.py
+./hep_challenge/ingestion.py
+./hep_challenge/ingestion_parallel.py
+./hep_challenge/run_ingestion.py
+./hep_challenge/run_scoring.py
+./hep_challenge/score.py
+./hep_challenge/systematics.py
+./hep_challenge/visualization.py
+hep_challenge.egg-info/PKG-INFO
+hep_challenge.egg-info/SOURCES.txt
+hep_challenge.egg-info/dependency_links.txt
+hep_challenge.egg-info/top_level.txt
