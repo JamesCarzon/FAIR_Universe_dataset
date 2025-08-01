@@ -174,7 +174,7 @@ class Data:
 
     def load_test_set(self):
 
-        selected_test_indices = np.array(range(self.test_size))
+        selected_test_indices = np.random.choice(self.total_rows, size=self.test_size, replace=False)
         
         # Load the data
         test_df = self.__load_data(selected_test_indices)
